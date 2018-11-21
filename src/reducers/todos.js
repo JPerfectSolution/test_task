@@ -6,7 +6,7 @@ const todo = (state, action) => {
       return {
         id: action.id,
         text: action.text,
-        completed: false
+        completed: false,
       }
     case 'TOGGLE_TODO':
       if (state.id !== action.id) {
@@ -17,6 +17,7 @@ const todo = (state, action) => {
         ...state,
         completed: !state.completed
       }
+      
     case 'SAVE_TODO':
       if (state.id !== action.id) {
           return state
@@ -39,6 +40,11 @@ const todos = (state = [], action) => {
         ...state,
         todo(undefined, action)
       ]
+    case 'DELETE_TODO':
+      if(window.confirm("Are you sure?")==true){
+        return state.filter(t => (t.id !== action.id))
+      }
+      return state      
     case 'TOGGLE_TODO':
       return state.map(t =>
         todo(t, action)

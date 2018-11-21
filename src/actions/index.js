@@ -21,6 +21,11 @@ export const editTodo = (id, text) => ({
   text
 })
 
+export const deleteTodo = (id) => ({
+  type: 'DELETE_TODO',
+  id
+})
+
 export const saveTodo = (text, id) => ({
   type: 'SAVE_TODO',
   id,
@@ -30,3 +35,9 @@ export const saveTodo = (text, id) => ({
 export const changeState = () => ({
   type: 'CHANG_STATE',
 })
+
+/////////////////////////
+//     Action ASYNC    //
+/////////////////////////
+
+
