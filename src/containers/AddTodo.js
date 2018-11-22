@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { addTodo, changeState } from '../actions'
 import  { saveTodo } from '../actions'
 import {Button, Row, Col, Card, CardHeader, CardBody} from 'reactstrap'
+import './AddTodo.scss'
 
 const mapStateToProps = (state) => ({
   id: state.editlist.id,
@@ -37,12 +38,12 @@ let AddTodo = ({ dispatch, id=0, text='', flag=false}) => {
                   }
                   input.value = ''
                 }}>
-                  <input ref={node => {
-                    input = node
+                  <input className='AddTodo' ref={node => {
+                    input = node 
                     if (input != null) {
                       input.value = text
                     }
-                  }} placeholder='Input Content' required/> <Button color="success" type='submit' size="sm" className="btn-facebook btn-brand mr-1 mb-1"><i className="fa fa-facebook"></i>
+                  }} placeholder='Input Content(*This style is scss style.*)' required/> <Button color="success" type='submit' size="sm" className="btn-facebook btn-brand mr-1 mb-1"><i className="fa fa-facebook"></i>
                     {btnlabel}
                   </Button>
                 </form>
