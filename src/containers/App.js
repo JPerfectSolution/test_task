@@ -8,7 +8,7 @@ import { addTodo } from '../actions'
 class App extends Component{
   componentDidMount(){
     const {dispatch} = this.props
-    fetch('http://localhost:3000/resources/test.json')
+    fetch('https://redux-text-task-11-22.herokuapp.com/resources/test.json')
       .then(response => response.json())
       .then(json => {
         return json.todos.map(t =>
