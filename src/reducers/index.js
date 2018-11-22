@@ -6,7 +6,7 @@ import editlist from './editlist'
 const todoApp = combineReducers({
   todos,
   visibilityFilter,
-  editlist
+  editlist,
 })
 
 export default todoApp

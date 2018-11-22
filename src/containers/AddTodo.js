@@ -13,8 +13,7 @@ const mapStateToProps = (state) => ({
 let AddTodo = ({ dispatch, id=0, text='', flag=false}) => {
   let input
   let btnlabel = flag ? 'Update': 'Add Item'
-
-  console.log(input)
+  
   return (
     <div>
       <Row>
@@ -43,7 +42,7 @@ let AddTodo = ({ dispatch, id=0, text='', flag=false}) => {
                     if (input != null) {
                       input.value = text
                     }
-                  }} /> <Button type='submit' size="sm" className="btn-facebook btn-brand mr-1 mb-1"><i className="fa fa-facebook"></i>
+                  }} placeholder='Input Content' required/> <Button color="success" type='submit' size="sm" className="btn-facebook btn-brand mr-1 mb-1"><i className="fa fa-facebook"></i>
                     {btnlabel}
                   </Button>
                 </form>

@@ -1,0 +1,20 @@
+{
+    "todos": [
+        {
+            "text" : "Text1",
+            "completed": false
+        },
+        {
+            "text" : "Text2",
+            "completed": false
+        },
+        {
+            "text" : "Text3",
+            "completed": false
+        },
+        {
+            "text" : "Text4",
+            "completed": false
+        }
+    ]
+}

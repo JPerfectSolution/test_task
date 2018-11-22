@@ -1,24 +1,25 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import Todo from './Todo'
 import {Row, Col, Card, CardHeader, CardBody, Table } from 'reactstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAddressBook } from '@fortawesome/free-solid-svg-icons';
+import { faList } from '@fortawesome/free-solid-svg-icons';
 
-const TodoList = ({todos, onTodoClick, onEditTodoClick, onDeleteTodoClick })=>(
+const TodoList = ({todos, onTodoClick, onEditTodoClick, onDeleteTodoClick }) => (
       <Row>
         <Col>
           <Card>
             <CardHeader>
-              <FontAwesomeIcon icon={faAddressBook}></FontAwesomeIcon> Item list
+              <span className="h3"><FontAwesomeIcon icon={faList}></FontAwesomeIcon> Item list</span>
             </CardHeader>
             <CardBody>
               <Table hover bordered striped responsive size="sm">
                 <thead>
                   <tr>
-                    <th width="5%">Status</th>
+                    <th width="30px">Status</th>
                     <th className = "text-center">Content</th>
-                    <th width ="20%">Edit/Delete</th>
+                    <th width="200px">Edit/Delete</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -39,6 +40,7 @@ const TodoList = ({todos, onTodoClick, onEditTodoClick, onDeleteTodoClick })=>(
         </Col>
       </Row>
     )
+
 TodoList.propTypes = {
   todos: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
@@ -50,4 +52,10 @@ TodoList.propTypes = {
   onDeleteTodoClick: PropTypes.func.isRequired
 }
 
-export default TodoList
+const mapStateToProps = (state) => ({
+    todos: state.todos.present
+})
+
+
+
+export default connect(mapStateToProps)(TodoList)

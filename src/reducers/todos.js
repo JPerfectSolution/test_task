@@ -41,7 +41,7 @@ const todos = (state = [], action) => {
         todo(undefined, action)
       ]
     case 'DELETE_TODO':
-      if(window.confirm("Are you sure?")==true){
+      if(window.confirm("Are you sure?") === true){
         return state.filter(t => (t.id !== action.id))
       }
       return state      
